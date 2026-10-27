@@ -1,0 +1,30 @@
+DirectoryIndex index.php index.html
+
+RewriteEngine On
+
+# Private Projekt- und Datenbankdateien niemals direkt ausliefern.
+RewriteRule ^(?:database|mysql|docs|tests|backups|node_modules|\.git|\.agents|\.codex)(?:/|$) - [F,L]
+RewriteRule ^(?:config|logs|Buchhaltung|vendor)(?:/|$) - [F,L]
+RewriteRule ^(?:package(-lock)?\.json|tsconfig\.json|vite\.config\.ts|next\.config\.ts|drizzle\.config\.ts)$ - [F,L]
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+RewriteRule ^favicon\.svg$ public/favicon.svg [L]
+
+# Preserve legacy bookmarks while serving the PHP pages.
+RewriteRule ^index\.html$ /rentabau.ch/index.php [R=301,L,NE]
+RewriteRule ^maschinen\.html$ /rentabau.ch/maschinen.php [R=301,L,NE]
+RewriteRule ^kategorie\.html$ /rentabau.ch/kategorie.php [R=301,L,NE]
+RewriteRule ^maschine-detail\.html$ /rentabau.ch/maschine-detail.php [R=301,L,NE]
+RewriteRule ^bagger\.html$ /rentabau.ch/bagger.php [R=301,L,NE]
+RewriteRule ^fahrzeuge\.html$ /rentabau.ch/fahrzeuge.php [R=301,L,NE]
+RewriteRule ^kleinmaschinen\.html$ /rentabau.ch/kleinmaschinen.php [R=301,L,NE]
+RewriteRule ^abbruch\.html$ /rentabau.ch/abbruch.php [R=301,L,NE]
+RewriteRule ^kontakt\.html$ /rentabau.ch/kontakt.php [R=301,L,NE]
+RewriteRule ^checkout\.html$ /rentabau.ch/checkout.php [R=301,L,NE]
+RewriteRule ^konto\.html$ /rentabau.ch/konto.php [R=301,L,NE]
+RewriteRule ^admin\.html$ /rentabau.ch/admin.php [R=301,L,NE]

@@ -1,0 +1,10 @@
+<?php
+// Kopiere diese Datei auf dem Hoststar-Server nach database.hoststar.php.
+// Keine Zugangsdaten in öffentliche Repositories oder Chats eintragen.
+return [
+    'host' => 'localhost',
+    'port' => 3306,
+    'database' => 'DEIN_HOSTSTAR_DB_NAME',
+    'username' => 'DEIN_HOSTSTAR_DB_USER',
+    'password' => 'DEIN_HOSTSTAR_DB_PASSWORT',
+];

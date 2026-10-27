@@ -1,0 +1,78 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# Production/local credentials and hosting sync state
+/config/database.hoststar.php
+/config/*.local.php
+/hoststar-config.json
+/.hoststar-sync-state.json
+/.hoststar-sync-state*
+
+# Runtime logs, backups and private QA artifacts
+/logs/
+/backups/
+/qa-screenshots/
+*.log
+
+# Database/customer-data exports (keep schema migrations under database/migrations/)
+/mysql/
+/Export aus mysql/
+/database/*.sql
+/database/*.csv
+/database/*.json
+/Buchhaltung/
+
+# Local tooling/build state
+/.openai/
+/.sites-runtime/
+/.vinext/
+/.wrangler/
+/outputs/
+/work/
+
+# vercel
+.vercel
+
+# typescript
+next-env.d.ts
+/dist/
+/.wrangler/
+/.sites-runtime/
+/outputs/
+/work/
+
+# Private Testdateien
+/tests/cookie*.txt
+/tests/*fixture-state*.json
+/tests/*.png
+/tests/*.pdf
+/tests/*.zip
